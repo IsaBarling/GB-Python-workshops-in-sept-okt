@@ -4,7 +4,8 @@
 def sum_odd_index(lst):
     s = 0
     for i in range(len(lst)):
-        if i % 2 != 0:
+        print(i) #нечетный индекс = четная позиция
+        if i % 2 == 0:
             s += lst[i]
     print(f"Сумма произвольных чисел равна: {s}")
 
