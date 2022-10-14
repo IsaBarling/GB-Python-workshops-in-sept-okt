@@ -58,7 +58,7 @@ while(moves >= 0 and not finish):
                 print("Already filled")
             else:
                 print(num)
-                nums.append(num)
+                nums.append(num)  # type: ignore
                 print(nums)
                 if(player==0):
                     nums[0].append(num)
