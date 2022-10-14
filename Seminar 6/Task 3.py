@@ -3,7 +3,7 @@
 
 def ListOfColleagues(*names):
     output = {}
-    for name in names:
+    for name in sorted(names):
         key = name[0].capitalize()
         if key not in output:
             output[key] = []
