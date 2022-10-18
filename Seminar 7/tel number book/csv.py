@@ -3,7 +3,8 @@ def Save(records, path):
     try:
         with open(path, "w", encoding='utf-8') as duck:
             for r in records:
-                duck.write(r.Surname + ";" + r.Firstname + ";" + r.Telephone + ";" + r.Description + ";" + "\n")
+                if r.Lastname is not None:
+                    duck.write(r.Lastname + ";" + r.Firstname + ";" + r.Telephone + ";" + r.Description + ";" + "\n")
     except Exception as e:
         print(e)
         

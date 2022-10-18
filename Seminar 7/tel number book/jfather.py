@@ -8,28 +8,7 @@ def Save(records, path):
         records2.append(f'{ "Firstname" : "{r.Firstname}", "Lastname" : "{r.Lastname}" , "Telephone" : "{r.Telephone}" , "Description" : "{r.Description}" }')
     with open(path, "w", encoding='utf-8') as duck:
         duck.write("[" + ",".join(records2) + "]")
-    return
-    try:
-        records2 =[]
-        for rec in records:
-            print(rec.toJSON())
-            records2.append((rec.__dict__))
-            print(records2)
-        print(records2)
-        with open(path, "w", encoding='utf-8') as duck:
-            for rec in records:
-                #duck.write(str(records2))
-                JZ.dump(records2, duck)
         
-        with open(path, "r+", encoding='utf-8') as duck:
-            text = duck.read()
-            text = text.replace("][", "")
-            
-            duck.write(text)
-            #for r in records:
-                #duck.write(r.Surname + ";" + r.Firstname + ";" + r.Telephone + ";" + r.Description + ";" + "\n")
-    except Exception as e:
-        print(e)
         
 def Open(path):
     records = []
@@ -63,14 +42,6 @@ def Open(path):
                 if(ln != "" and fn != "" and tel != ""):
                     r = rec.record(ln, fn, tel, ds)
                     records.append(r)
-                
-    #        data = JZ.load(duck)
-     #       print(data)
-      #      for line in data:
-       #         r = rec.record(line["Lastname"],line["Firstname"], line["Telephone"], line["Description"])
-        #        print(r)
-         #       records.append(r)                
-                
     except Exception as e:
         print(e)
     print(records)

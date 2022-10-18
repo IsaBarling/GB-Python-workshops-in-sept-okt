@@ -1,6 +1,7 @@
 import record as re
 import csv
 import jfather as j
+#import xml
         
 def menu0():
     print("What do you want to do?")
@@ -34,7 +35,7 @@ def menu1():
         elif(ext == "json"):
             j.Save(records, path)
         elif(ext == "xml"):
-            records2 = j.Open(path)
+            j.Save(records, path)
         else:
             print("Extension is unknown!")
     except Exception as e:
@@ -65,3 +66,16 @@ def menu2(records):
         print(e)
     
     return records
+
+def menu3(records):
+    path = input("Specify path to save data:")
+    arr = path.split(".")
+    ext = arr[len(arr)-1]
+    if( ext == "csv"):
+        csv.Save(records, path)
+    elif(ext == "json"):
+        j.Save(records, path)
+    elif(ext == "xml"):
+        j.Save(records, path)#xml is depricated
+    else:
+        print("Extension is unknown!")

@@ -18,6 +18,8 @@ while(True):
             m.menu1()
         elif choice == 2:
             records = m.menu2(records)
+        elif choice == 3:
+            m.menu3(records)
         elif choice == 4:            
             for record in records:
                 try:
